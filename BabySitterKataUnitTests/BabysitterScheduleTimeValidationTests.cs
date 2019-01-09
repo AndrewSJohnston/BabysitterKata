@@ -5,8 +5,12 @@ using System;
 namespace BabySitterKataUnitTests
 {
     [TestClass]
-    public class Tests
+    public class BabysitterScheduleTimeValidationTests
     {
+        #region Start and End Time Validation
+
+        #region Start Time Validation
+
         [TestMethod]
         public void NightScheduleAcceptsValidStartingTime()
         {
@@ -47,6 +51,10 @@ namespace BabySitterKataUnitTests
             Assert.Fail();
         }
 
+        #endregion
+
+        #region End Time Validation
+
         [TestMethod]
         public void NightScheduleAcceptsValidEndingTime()
         {
@@ -84,5 +92,8 @@ namespace BabySitterKataUnitTests
                 Assert.Fail();
             }
         }
+        #endregion
     }
+
+    #endregion
 }
