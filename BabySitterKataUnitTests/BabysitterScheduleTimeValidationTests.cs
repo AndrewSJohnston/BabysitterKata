@@ -16,12 +16,9 @@ namespace BabySitterKataUnitTests
         {
             try
             {
-                var schedule = new OneNightSchedule()
+                var schedule = new ScheduledInterval()
                 {
-                    StartingTime = new BabysittingStartTime()
-                    {
-                        StartingTime24H = 17
-                    },
+                    StartingTime24 = 17,
                 };
             }
             catch (Exception e)
@@ -31,16 +28,13 @@ namespace BabySitterKataUnitTests
         }
 
         [TestMethod]
-        public void NightScheduleFailsWithInValidStartingTime()
+        public void NightScheduleFailsWithInvalidStartingTime()
         {
             try
             {
-                var schedule = new OneNightSchedule()
+                var schedule = new ScheduledInterval()
                 {
-                    StartingTime = new BabysittingStartTime()
-                    {
-                        StartingTime24H = 12
-                    },
+                    StartingTime24 = 12,
                 };
             }
             catch (Exception e)
@@ -60,12 +54,9 @@ namespace BabySitterKataUnitTests
         {
             try
             {
-                var schedule = new OneNightSchedule()
+                var schedule = new ScheduledInterval()
                 {
-                    EndingTime = new BabysittingEndTime()
-                    {
-                        EndingTime24H = 18
-                    },
+                    EndingTime24H = 18,
                 };
             }
             catch (Exception e)
@@ -75,22 +66,20 @@ namespace BabySitterKataUnitTests
         }
 
         [TestMethod]
-        public void NightScheduleFailsWithInValidEndingTime()
+        public void NightScheduleFailsWithInvalidEndingTime()
         {
             try
             {
-                var schedule = new OneNightSchedule()
+                var schedule = new ScheduledInterval()
                 {
-                    EndingTime = new BabysittingEndTime()
-                    {
-                        EndingTime24H = 18
-                    },
+                    EndingTime24H = 12,
                 };
             }
             catch (Exception e)
             {
-                Assert.Fail();
+                return;
             }
+            Assert.Fail();
         }
         #endregion
     }

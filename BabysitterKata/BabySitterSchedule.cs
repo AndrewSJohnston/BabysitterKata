@@ -2,51 +2,40 @@
 
 namespace BabysitterKata
 {
-
-    public struct BabysittingStartTime
+    public class ScheduledInterval
     {
-        private int startingTime24H;
-
-        public int StartingTime24H
+        int _startingTime24H;
+        int _endingTime24H;
+        public ScheduledInterval()
         {
-            get
-            {
-                return startingTime24H;
-            }
+            _startingTime24H = 17;
+            _endingTime24H = 4;
+        }
+
+        public int StartingTime24
+        {
+            get { return _startingTime24H; }
             set
             {
+                //Arrives anywhere between 5:00PM and 3:00AM
                 if ((value >= 17 && value <= 24) || (value >= 0 && value <= 3))
-                    startingTime24H = value;
+                    _startingTime24H = value;
                 else
                     throw new InvalidOperationException("The starting hour entered was somewhere outside the acceptable range of 5PM to 3AM, and is thus invalid.");
             }
         }
-    }
-
-    public struct BabysittingEndTime
-    {
-        private int endingTime24H;
 
         public int EndingTime24H
         {
-            get
-            {
-                return endingTime24H;
-            }
+            get { return _endingTime24H; }
             set
             {
+                //Leaves anywhere between 6:00PM and 4:00AM
                 if ((value >= 18 && value <= 24) || (value >= 0 && value <= 4))
-                    endingTime24H = value;
+                    _endingTime24H = value;
                 else
                     throw new InvalidOperationException("The ending hour entered was somewhere outside the acceptable range of 6PM to 4AM, and is thus invalid.");
             }
         }
-    }
-
-    public class OneNightSchedule
-    {
-        public BabysittingStartTime StartingTime;
-
-        public BabysittingEndTime EndingTime;
     }
 }
