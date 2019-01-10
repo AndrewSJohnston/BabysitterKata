@@ -89,6 +89,27 @@ namespace BabySitterKataUnitTests
                                                                                                 },
                                                                                               familyRateRange);
             Assert.IsTrue(nightlyPay == 48);
+
+            //Test night with family B overlapping first twopay rate schedules | 12$ per hour for 2 hours between 8pm and 10pm, 
+            //8$ hour for 1 hour between 10pm and 11pm = 32
+            nightlyPay = NightlyTotalPayCalculator.CalculateAmountOwedForGivenNightlySchedule(new ScheduledInterval()
+                                                                                                {
+                                                                                                    EndingTime24H = 23,
+                                                                                                    StartingTime24H = 20
+                                                                                                },
+                                                                                              familyRateRange);
+            Assert.IsTrue(nightlyPay == 32);
+
+
+
+            //Test night with family B overlapping final twopay rate schedules | 8$ per hour for 1 hour between 11pm and 12pm, 
+            //16$ hour for 4 hours between 12am and 4am = 72
+            nightlyPay = NightlyTotalPayCalculator.CalculateAmountOwedForGivenNightlySchedule(new ScheduledInterval()
+            {
+                StartingTime24H = 23
+            },
+                                                                                              familyRateRange);
+            Assert.IsTrue(nightlyPay == 72);
         }
     }
 }
