@@ -51,10 +51,8 @@ namespace BabysitterKata
         }
     }
 
-    public class FamilyBRateRangeList
+    public class FamilyBRateRangeList : FamilyRateRangeList
     {
-        private List<ScheduleIntervalRate> _familyRateRanges;
-
         public FamilyBRateRangeList()
         {
             _familyRateRanges = new List<ScheduleIntervalRate>()
@@ -90,11 +88,6 @@ namespace BabysitterKata
                     }
                 },
             };
-        }
-
-        public List<ScheduleIntervalRate> FamilyRateRanges
-        {
-            get { return _familyRateRanges; }
         }
     }
 }
