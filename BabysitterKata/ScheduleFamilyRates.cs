@@ -59,23 +59,34 @@ namespace BabysitterKata
         {
             _familyRateRanges = new List<ScheduleIntervalRate>()
             {
-                //Family A pays $15 per hour before 11pm
+                //Family B pays $12 per hour before 10pm
                 new ScheduleIntervalRate()
                 {
-                    RateInDollars = 15,
+                    RateInDollars = 12,
                     TimeRangeForRate = new ScheduledInterval()
                     {
-                        EndingTime24H = 23,
+                        EndingTime24H = 22,
                     }
                 },
 
-                //Family A pays $20 per hour the rest of the night
+                //Family B pays $8 between 10 and 12,
                 new ScheduleIntervalRate()
                 {
-                    RateInDollars = 20,
+                    RateInDollars = 8,
                     TimeRangeForRate = new ScheduledInterval()
                     {
-                        StartingTime24 = 23
+                        StartingTime24 = 22,
+                        EndingTime24H = 24
+                    }
+                },
+
+                //Family B pays $16 the rest of the night,
+                new ScheduleIntervalRate()
+                {
+                    RateInDollars = 16,
+                    TimeRangeForRate = new ScheduledInterval()
+                    {
+                        StartingTime24 = 24,
                     }
                 },
             };
