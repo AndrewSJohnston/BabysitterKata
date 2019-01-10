@@ -23,7 +23,6 @@ namespace BabysitterKata
 
     public class FamilyARateRangeList : FamilyRateRangeList
     {
-
         public FamilyARateRangeList()
         {
             _familyRateRanges = new List<ScheduleIntervalRate>()
@@ -85,6 +84,35 @@ namespace BabysitterKata
                     TimeRangeForRate = new ScheduledInterval()
                     {
                         StartingTime24 = 24,
+                    }
+                },
+            };
+        }
+    }
+
+    public class FamilyCRateRangeList : FamilyRateRangeList
+    {
+        public FamilyCRateRangeList()
+        {
+            _familyRateRanges = new List<ScheduleIntervalRate>()
+            {
+                //Family A pays  $21 per hour before 9pm
+                new ScheduleIntervalRate()
+                {
+                    RateInDollars = 21,
+                    TimeRangeForRate = new ScheduledInterval()
+                    {
+                        EndingTime24H = 21,
+                    }
+                },
+
+                //Family A pays $15 per hour the rest of the night
+                new ScheduleIntervalRate()
+                {
+                    RateInDollars = 15,
+                    TimeRangeForRate = new ScheduledInterval()
+                    {
+                        StartingTime24 = 21
                     }
                 },
             };
