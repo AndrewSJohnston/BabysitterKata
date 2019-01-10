@@ -18,7 +18,7 @@ namespace BabySitterKataUnitTests
             {
                 var schedule = new ScheduledInterval()
                 {
-                    StartingTime24 = 17,
+                    StartingTime24H = 17,
                 };
             }
             catch (Exception e)
@@ -34,7 +34,7 @@ namespace BabySitterKataUnitTests
             {
                 var schedule = new ScheduledInterval()
                 {
-                    StartingTime24 = 12,
+                    StartingTime24H = 12,
                 };
             }
             catch (Exception e)

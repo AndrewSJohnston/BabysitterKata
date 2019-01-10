@@ -15,10 +15,10 @@ namespace BabySitterKataUnitTests
 
             //Make sure all the rate ranges match the spec
             Assert.IsTrue(familyARates.FamilyRateRanges.All(a => (a.RateInDollars == 15 
-                                                                    && a.TimeRangeForRate.StartingTime24 == 17 
+                                                                    && a.TimeRangeForRate.StartingTime24H == 17 
                                                                     && a.TimeRangeForRate.EndingTime24H == 23)
                                                                 || (a.RateInDollars == 20
-                                                                    && a.TimeRangeForRate.StartingTime24 == 23
+                                                                    && a.TimeRangeForRate.StartingTime24H == 23
                                                                     && a.TimeRangeForRate.EndingTime24H == 4)));
         }
 
@@ -29,13 +29,13 @@ namespace BabySitterKataUnitTests
 
             //Make sure all the rate ranges match the spec
             Assert.IsTrue(familyBRates.FamilyRateRanges.All(a => (a.RateInDollars == 12
-                                                                    && a.TimeRangeForRate.StartingTime24 == 17
+                                                                    && a.TimeRangeForRate.StartingTime24H == 17
                                                                     && a.TimeRangeForRate.EndingTime24H == 22)
                                                                 || (a.RateInDollars == 8
-                                                                    && a.TimeRangeForRate.StartingTime24 == 22
+                                                                    && a.TimeRangeForRate.StartingTime24H == 22
                                                                     && a.TimeRangeForRate.EndingTime24H == 24)
                                                                 || (a.RateInDollars == 16
-                                                                    && a.TimeRangeForRate.StartingTime24 == 24
+                                                                    && a.TimeRangeForRate.StartingTime24H == 24
                                                                     && a.TimeRangeForRate.EndingTime24H == 4)));
         }
 
@@ -46,10 +46,10 @@ namespace BabySitterKataUnitTests
 
             //Make sure all the rate ranges match the spec
             Assert.IsTrue(familyCRates.FamilyRateRanges.All(a => (a.RateInDollars == 21
-                                                                    && a.TimeRangeForRate.StartingTime24 == 17
+                                                                    && a.TimeRangeForRate.StartingTime24H == 17
                                                                     && a.TimeRangeForRate.EndingTime24H == 21)
                                                                 || (a.RateInDollars == 15
-                                                                    && a.TimeRangeForRate.StartingTime24 == 21
+                                                                    && a.TimeRangeForRate.StartingTime24H == 21
                                                                     && a.TimeRangeForRate.EndingTime24H == 4)));
         }
     }

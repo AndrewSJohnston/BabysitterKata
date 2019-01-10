@@ -12,7 +12,7 @@ namespace BabysitterKata
             _endingTime24H = 4;
         }
 
-        public int StartingTime24
+        public int StartingTime24H
         {
             get { return _startingTime24H; }
             set

@@ -43,7 +43,7 @@ namespace BabysitterKata
                     RateInDollars = 20,
                     TimeRangeForRate = new ScheduledInterval()
                     {
-                        StartingTime24 = 23
+                        StartingTime24H = 23
                     }
                 },
             };
@@ -72,7 +72,7 @@ namespace BabysitterKata
                     RateInDollars = 8,
                     TimeRangeForRate = new ScheduledInterval()
                     {
-                        StartingTime24 = 22,
+                        StartingTime24H = 22,
                         EndingTime24H = 24
                     }
                 },
@@ -83,7 +83,7 @@ namespace BabysitterKata
                     RateInDollars = 16,
                     TimeRangeForRate = new ScheduledInterval()
                     {
-                        StartingTime24 = 24,
+                        StartingTime24H = 24,
                     }
                 },
             };
@@ -112,7 +112,7 @@ namespace BabysitterKata
                     RateInDollars = 15,
                     TimeRangeForRate = new ScheduledInterval()
                     {
-                        StartingTime24 = 21
+                        StartingTime24H = 21
                     }
                 },
             };
