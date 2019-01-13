@@ -7,7 +7,7 @@ namespace BabysitterKata
 {
     public static class NightlyTotalPayCalculator
     {
-        //For the morning hours, ie 1am through 4 am, simple add 24 to thelp when calculating sequential hours worked
+        //For the morning hours, ie 1am through 4 am, simple add 24 to help when calculating sequential hours worked
         static public int ScheduleHourTransform(int actualHour)
         {
             var scheduleHourNo = actualHour;

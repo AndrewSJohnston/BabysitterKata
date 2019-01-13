@@ -13,7 +13,7 @@ namespace BabySitterKataUnitTests
         {
             var familyRateRange = new FamilyARateRangeList();
 
-            //Test Full night with family A | 15$ per hour for 6 hours between 5pm and 11pm, 20$ hour for 5 hours between 11pm and 4am = 90
+            //Test Full night with family A | 15$ per hour for 6 hours between 5pm and 11pm = 90, 20$ hour for 5 hours between 11pm and 4am = 100
             var nightlyPay = NightlyTotalPayCalculator.CalculateAmountOwedForGivenNightlySchedule(new ScheduledInterval(), familyRateRange);
             Assert.IsTrue(nightlyPay == 190);
 
@@ -36,7 +36,7 @@ namespace BabySitterKataUnitTests
                                                                                               familyRateRange);
             Assert.IsTrue(nightlyPay == 45);
 
-            //Test night with family A all hours in second pay rate window | 20$ per hour for 4 hour between 12pm and 4am = 80 
+            //Test night with family A all hours in second pay rate window | 20$ per hour for 4 hours between 12pm and 4am = 80 
             nightlyPay = NightlyTotalPayCalculator.CalculateAmountOwedForGivenNightlySchedule(new ScheduledInterval()
                                                                                                 {
                                                                                                     EndingTime24H = 4,
@@ -54,8 +54,8 @@ namespace BabySitterKataUnitTests
             var nightlyPay = NightlyTotalPayCalculator.CalculateAmountOwedForGivenNightlySchedule(new ScheduledInterval(), familyRateRange);
             Assert.IsTrue(nightlyPay == 140);
 
-            //Test night with family B overlapping all pay rate schedules | 12$ per hour for 1 hour between 9pm and 10pm = 60 
-            //8$ hour for 2 hours between 10pm and 12pm and 16$ for 2 hours between 12pm and 2am= 63
+            //Test night with family B overlapping all pay rate schedules | 12$ per hour for 1 hour between 9pm and 10pm 
+            //8$ hour for 2 hours between 10pm and 12pm and 16$ for 2 hours between 12pm and 2am = 60
             nightlyPay = NightlyTotalPayCalculator.CalculateAmountOwedForGivenNightlySchedule(new ScheduledInterval()
                                                                                                 {
                                                                                                     EndingTime24H = 2,
@@ -64,7 +64,7 @@ namespace BabySitterKataUnitTests
                                                                                               familyRateRange);
             Assert.IsTrue(nightlyPay == 60);
 
-            //Test night with family B all hours in first pay rate window | 12$ per hour for 4 hours between 5pm and 9pm =48 
+            //Test night with family B all hours in first pay rate window | 12$ per hour for 4 hours between 5pm and 9pm = 48 
             nightlyPay = NightlyTotalPayCalculator.CalculateAmountOwedForGivenNightlySchedule(new ScheduledInterval()
                                                                                                 {
                                                                                                     EndingTime24H = 21,
