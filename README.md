@@ -2,6 +2,7 @@ To build and run, simply check out or download the repo, have the .net core sdk,
 navigate to the solution directory and run the following two commands.
 
 dotnet build
+
 dotnet test
 
 
